@@ -1,0 +1,16 @@
+<md-content layout="column" layout-align="center center">
+    <h1>Login</h1>
+    <form class="" action="$ctrl.submit(user)" layout="column">
+        <md-input-container>
+            <label>Username</label>
+            <input ng-model="user.username" required>
+        </md-input-container>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email" required>
+        </md-input-container>
+        <md-button aria-label="Log Out" class="md-raised md-warn" type="submit">
+            Login
+        </md-button>
+    </form>
+</md-content>

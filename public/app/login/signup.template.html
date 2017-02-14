@@ -1,0 +1,30 @@
+<md-content layout="column" layout-align="center center">
+    <h1>Signup</h1>
+    <form class="" action="$ctrl.submit(user)" layout="column">
+        <div class="names">
+            <md-input-container>
+                <label>First Name</label>
+                <input ng-model="user.fname" required>
+            </md-input-container>
+            <md-input-container>
+                <label>Last Name</label>
+                <input ng-model="user.lname" required>
+            </md-input-container>
+        </div>
+        <md-input-container>
+            <label>Username</label>
+            <input ng-model="user.username" required>
+        </md-input-container>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email" required>
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <input ng-model="user.password" type="password" required>
+        </md-input-container>
+        <md-button aria-label="Log Out" class="md-raised md-warn" type="submit">
+            Signup
+        </md-button>
+    </form>
+</md-content>
