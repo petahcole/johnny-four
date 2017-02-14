@@ -24,22 +24,3 @@
         <md-icon ng-bind="'keyboard_arrow_down'" id="arrow-down"></md-icon>
     </div>
 </section>
-
-<button type="button" ng-click="$ctrl.wsavc.playStream()">Start Video</button>
-<button type="button" ng-click="$ctrl.wsavc.stopStream()">Stop Video</button>
-<button type="button" ng-click="$ctrl.wsavc.disconnect()">Disconnect</button>
-
-<script type="text/javascript" src="http-live-player.js"></script>
-<script type="text/javascript">
-
-    var canvas = document.createElement("canvas");
-    document.body.appendChild(canvas);
-
-    // Create h264 player
-    var uri = "ws://" + document.location.host;
-    var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
-    wsavc.connect(uri);
-
-    //expose instance for button callbacks
-    window.wsavc = wsavc;
-</script>
