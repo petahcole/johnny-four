@@ -1,33 +1,11 @@
 #view-canvas {
-  width: 960px;
-  height: 540px;
+  width: 80vw;
+  height: 50vh;
   border: 2px solid black;
   margin-left: 10vw;
   margin-right: 10vw;
   margin-top: 5vh;
   margin-bottom: 5vh;
-}
-
-#arrow-left {
-  display: inline !important;
-  font-size: 48px;
-  /*margin: 1em*/
-}
-
-#arrow-right  {
-  display: inline !important;
-  font-size: 48px;
-  /*margin: 1em*/
-}
-
-#arrow-up {
-  font-size: 48px;
-  /*margin: 1em*/
-}
-
-#arrow-down {
-  font-size: 48px;
-  /*margin: 1em*/
 }
 
 #start-btn  {
@@ -37,4 +15,14 @@
 
 #end-btn  {
   margin-bottom: 3vh
+}
+
+.grid {
+  width: 20%;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
