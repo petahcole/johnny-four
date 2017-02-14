@@ -11,8 +11,9 @@
         vm.$onInit = function() {
             console.log('drive me ooooh')
 
+            var container = document.getElementById('view-canvas');
             var canvas = document.createElement("canvas");
-            document.body.appendChild(canvas);
+            container.appendChild(canvas);
 
             // Create h264 player
             var uri = "ws://" + document.location.host;
