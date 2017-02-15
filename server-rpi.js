@@ -8,6 +8,7 @@
 
 const http = require('http');
 const express = require('express');
+const login = require('/routes/login')
 
 
 const WebStreamerServer = require('./lib/raspivid');
@@ -17,6 +18,8 @@ const app = express();
 //public website
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/vendor/dist'));
+
+app.use('/login', login);
 
 
 const server = http.createServer(app);
