@@ -4,7 +4,7 @@
     angular
         .module('app')
         .component('loginView', {
-            controller: 'LoginController',
+            controller: 'DialogController',
             templateUrl: 'app/login/login.template.html'
         });
 

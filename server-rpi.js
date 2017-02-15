@@ -8,7 +8,9 @@
 
 const http = require('http');
 const express = require('express');
-const login = require('/routes/login')
+const login = require('./routes/login')
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 const WebStreamerServer = require('./lib/raspivid');
@@ -20,6 +22,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/vendor/dist'));
 
 app.use('/login', login);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 
 const server = http.createServer(app);
