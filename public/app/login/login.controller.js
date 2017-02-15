@@ -3,16 +3,15 @@
 
     angular
         .module('app')
-        .controller('DialogController', DialogController);
+        .controller('SignupController', SignupController);
 
 
-    function DialogController() {
+    function SignupController() {
         const vm = this;
-        console.log('login controller working!')
 
-        vm.$onInit = function() {
-          console.log('login controller working!')
-        }
+        vm.$onInit = function() {}
+
+        vm.userSignup = function userSignup() {}
 
     }
 

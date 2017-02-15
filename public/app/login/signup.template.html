@@ -1,15 +1,15 @@
 <md-content layout="column" layout-align="center center">
     <h1>Signup</h1>
-    <form class="" action="$ctrl.submit(user)" layout="column">
+    <form name="signupForm" layout="column" ng-submit="$ctrl.userSignup()">
         <md-input-container>
             <label>Username</label>
-            <input ng-model="user.username" required>
+            <input ng-model="$ctrl.user.username" required>
         </md-input-container>
         <md-input-container>
             <label>Password</label>
-            <input ng-model="user.password" type="password" required>
+            <input ng-model="$ctrl.user.password" type="password" required>
         </md-input-container>
-        <md-button aria-label="Log Out" class="md-raised md-warn" type="submit">
+        <md-button aria-label="Log Out" class="md-raised md-warn" type="submit" ng-disabled="signupForm.$invalid">
             Signup
         </md-button>
     </form>

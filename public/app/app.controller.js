@@ -26,16 +26,23 @@
 
         vm.showSignUp = function(ev) {
             $mdDialog.show({
-                    controller: DialogController,
-                    templateUrl: 'app/login/signup.template.html',
-                    parent: 'app',
-                    targetEvent: ev,
-                    clickOutsideToClose: true,
-                    fullscreen: vm.customFullscreen
-                })
-                .then(function(answer) {
-                    console.log('Logged In');
-                })
+                controller: function() {
+                    console.log('hi there');
+
+                    vm.save = function() {
+                        console.log('hi');
+                    }
+
+                    vm.click = function() {
+                        console.log('clicked');
+                    }
+                },
+                templateUrl: 'app/login/signup.template.html',
+                parent: 'app',
+                targetEvent: ev,
+                clickOutsideToClose: true,
+                fullscreen: vm.customFullscreen,
+            });
         };
 
 

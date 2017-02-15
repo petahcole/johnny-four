@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .component('loginView', {
-            controller: 'DialogController',
-            templateUrl: 'app/login/login.template.html'
+        .component('signupView', {
+            controller: 'SignupController',
+            templateUrl: 'app/login/signup.template.html'
         });
 
 })();

@@ -90,6 +90,12 @@
                 url: '/drive',
                 component: 'driveView',
             })
+            .state({
+                name: 'signup',
+                parent: 'app',
+                url: '/signup',
+                component: 'signupView',
+            })
     }
 
 }());
