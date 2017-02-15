@@ -13,7 +13,9 @@
 
         vm.submitForm = function() {
             if ($location.path() === '/signup') {
-                formService.addUser(vm.user).then(function(data) {})
+                formService.addUser(vm.user).then(function(data) {
+                    $state.go('drive')
+                })
             } else {
                 formService.loginUser(vm.user).then(function(data) {
                     $state.go('drive')

@@ -13,7 +13,7 @@ router.post('/', (req, res, next) => {
                 res.send('Success')
                 // res.redirect('/drive')
             } else {
-                res.redirect('/')
+                res.send('Not Successful')
             }
         })
 })
@@ -31,8 +31,7 @@ router.post('/signup', (req, res, next) => {
                 Q
                     .createUser(userInfo)
                     .then(result => {
-                        console.log(result);
-                        res.redirect('/');
+                        res.send('Success');
                     });
             } else {
                 next(new Error('User already exists'));
