@@ -12,15 +12,15 @@
         vm.$onInit = function() {
           console.log('hello from the controller')
           console.log($location.path());
-  
+
         }
 
         vm.submitForm = function()  {
           console.log('submit form');
           if ($location.path() === '/signup') {
-            console.log('hey, signup!');
+            $http.post('/signup')
           } else {
-            console.log('hey login!');
+            console.log(vm.user);
           }
         }
 
