@@ -94,7 +94,13 @@
                 name: 'signup',
                 parent: 'app',
                 url: '/signup',
-                component: 'signupView',
+                component: 'formView',
+            })
+            .state({
+                name: 'login',
+                parent: 'app',
+                url: '/login',
+                component: 'formView',
             })
     }
 
