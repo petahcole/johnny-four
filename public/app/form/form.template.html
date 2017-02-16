@@ -1,16 +1,29 @@
 <md-content class="form-content" layout="column" layout-align="center center">
     <md-card layout-align="center center">
         <h1>{{$ctrl.greeting}}</h1>
-        <form name="signupForm" layout="column" ng-submit="$ctrl.submitForm()">
+        <form name="signupForm" layout="column" ng-submit="$ctrl.submitForm()" layout-align="center center">
             <md-input-container>
                 <label>Username</label>
-                <input ng-model="$ctrl.user.username" required>
+                <input name="email" ng-model="$ctrl.user.username" minlength="5" required>
+                <div ng-messages="signupForm.email.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength']">
+                        Username must be at least 5 characters long
+                    </div>
+                </div>
             </md-input-container>
             <md-input-container>
                 <label>Password</label>
-                <input ng-model="$ctrl.user.password" type="password" required>
+                <input ng-model="$ctrl.user.password" type="password" minlength="5" required>
+                <div ng-messages="signupForm.password.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength']">
+                        Password must be at least 5 characters long
+                    </div>
+                </div>
             </md-input-container>
-            <md-button aria-label="Log Out" class="md-raised md-warn" type="submit" ng-disabled="signupForm.$invalid">
+            <div class="error" ng-hide="hide">
+                <p>{{$ctrl.error}}</p>
+            </div>
+            <md-button aria-label="Log Out" class="md-raised md-warn" ng-click="show = !show" type="submit" ng-disabled="signupForm.$invalid">
                 {{$ctrl.greeting}}
             </md-button>
         </form>

@@ -2,7 +2,6 @@ const knex = require('../db/db-connection.js');
 
 module.exports = {
     validSign: function(username) {
-        console.log(username);
         return knex('user').where('username', username).first()
     },
     createUser: function(userInfo) {
