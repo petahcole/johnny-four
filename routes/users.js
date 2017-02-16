@@ -11,11 +11,15 @@ router.post('/', (req, res, next) => {
             if (username === result.username && bcrypt.compareSync(password, result.password)) {
                 //assigning JWT here .then(res.redirect(/drive))
                 res.send('Success')
-                // res.redirect('/drive')
             } else {
-                res.send('Not Successful')
+                next(new Error('Invalid Login'));
+                res.status(409).send('Invalid Login')
             }
         })
+        .catch(function(data) {
+            next(new Error('Unknown User'));
+            res.status(409).send('Unknown User, Please Signup')
+        });
 })
 
 router.post('/signup', (req, res, next) => {
@@ -35,7 +39,12 @@ router.post('/signup', (req, res, next) => {
                     });
             } else {
                 next(new Error('User already exists'));
+                res.status(409).send('User Already Exists')
             }
+        })
+        .catch(function(data) {
+            next(new Error('Invalid Signin'));
+            res.status(409).send('Invalid Signin')
         });
 })
 

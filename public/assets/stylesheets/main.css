@@ -124,3 +124,11 @@ md-card {
   width: 60%;
   height: 80%;
 }
+
+md-input-container {
+  width: 70%;
+}
+
+.error {
+  color: #820004;
+}

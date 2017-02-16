@@ -7,20 +7,27 @@
 
     function formService($http) {
         this.loginUser = function(data) {
-            console.log(data);
             return $http({
-                url: '/login',
+                url: '/users',
                 method: "POST",
                 data: data
+            }).then(function(data) {
+                return data
+            }).catch(function(data) {
+                return data
             });
         }
 
         this.addUser = function(data) {
             return $http({
-                url: '/login/signup',
+                url: '/users/signup',
                 method: "POST",
                 data: data
-            });
+            }).then(function(data) {
+                return data
+            }).catch(function(data) {
+                return data
+            })
         }
     }
 
