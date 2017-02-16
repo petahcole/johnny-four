@@ -10,7 +10,7 @@
                 <label>Password</label>
                 <input ng-model="$ctrl.user.password" type="password" required>
             </md-input-container>
-            <md-button aria-label="Log Out" class="md-raised md-warn" type="submit" ng-disabled="signupForm.$invalid">
+            <md-button aria-label="Log Out" class="md-raised md-warn" ng-click="show = !show" type="submit" ng-disabled="signupForm.$invalid">
                 {{$ctrl.greeting}}
             </md-button>
         </form>
