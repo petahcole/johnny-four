@@ -6,10 +6,33 @@
         .controller('DriveViewController', DriveViewController);
 
 
-    function DriveViewController() {
+    function DriveViewController($window) {
         const vm = this;
         vm.$onInit = function() {
-            console.log('drive me ooooh')
+          var socket = io.connect('10.6.67.156:3000');
+   console.log('connected');
+
+          vm.forward = function() {
+      console.log('within function');
+            socket.emit('forward');
+          }
+
+         vm.stop = function() {
+           console.log('stop');
+           socket.emit('stop');
+         }
+
+         vm.reverse = function() {
+           socket.emit('reverse');
+         }
+
+         vm.right = function() {
+           socket.emit('right');
+         }
+
+         vm.left = function() {
+           socket.emit('left');
+         }
 
             var container = document.getElementById('view-canvas');
             var canvas = document.createElement("canvas");
@@ -22,6 +45,27 @@
 
             //expose instance for button callbacks
             window.wsavc = wsavc;
+        }
+        vm.keyPress = function() {
+          if(event.keyCode === 38) {
+            console.log('up arrow pressed');
+          } else if (event.keyCode === 40) {
+            console.log('down arrow pressed');
+          } else if (event.keyCode === 37) {
+            console.log('left arrow pressed');
+          } else if (event.keyCode === 39) {
+            console.log('right arrow pressed');
+          }
+        }
+
+        vm.keyRelease = function()  {
+            console.log('key released');
+        }
+
+        vm.driveMe = function() {
+          console.log('clicked');
+          vm.element = $window.document.getElementById('drive')
+          vm.element.focus()
         }
 
     }
