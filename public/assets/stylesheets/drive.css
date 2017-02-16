@@ -18,6 +18,8 @@
 }
 
 .grid {
+  padding-bottom: 0px!important;
+  height: 40vh;
   width: 20%;
 }
 

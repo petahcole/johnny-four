@@ -1,16 +1,17 @@
 <div id="view-canvas" class="container" ng-model=$ctrl.stream></div>
 
 <div layout="row" layout-align="center center" class="">
-    <md-button id="start-btn" class="md-primary md-raised" onclick="wsavc.playStream()">Start</md-button>
+    <md-button id="start-btn" class="md-primary md-raised" ng-click="$ctrl.driveMe()" onclick="wsavc.playStream()">Start</md-button>
     <md-button id="end-btn" class="md-warn md-raised" onclick="wsavc.stopStream()">End</md-button>
 </div>
 
-<md-content class="grid-section" layout="row" layout-align="center center">
+<div class="grid-section" layout="row" layout-align="center center">
     <md-grid-list class="grid" md-cols-xs="3" md-cols-sm="3" md-cols-md="3" md-cols-gt-md="3" md-row-height-gt-md="1:1" md-row-height="2:2">
         <md-grid-tile class="tile" md-rowspan="1" md-colspan="1"></md-grid-tile>
         <md-grid-tile class="tile" md-rowspan="1" md-colspan="1">
             <md-button class="md-fab md-warn" aria-label="Up">
                 <md-icon ng-bind="'keyboard_arrow_up'" id="arrow-up" ng-click="$ctrl.forward()"></md-icon>
+                <md-icon ng-click="$ctrl.newSocket()" ng-bind="'keyboard_arrow_up'" id="arrow-up"></md-icon>
             </md-button>
         </md-grid-tile>
         <md-grid-tile class="tile" md-rowspan="1" md-colspan="1"></md-grid-tile>
@@ -33,7 +34,6 @@
         </md-grid-tile>
         <md-grid-tile class="tile" md-rowspan="1" md-colspan="1"></md-grid-tile>
     </md-grid-list>
-    <div layout="row" layout-align="center center" class="">
-      <md-button id="end-btn" class="md-warn md-raised" ng-click="$ctrl.stop()">stop</md-button>
-    </div>
-</md-content>
+</div>
+
+<input type="text" id="drive" ng-keydown="$ctrl.keyPress()" ng-keyup="$ctrl.keyRelease()">
