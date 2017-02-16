@@ -19,6 +19,7 @@
     "express": "^4.13.4",
     "knex": "^0.12.6",
     "mout": "^1.0.0",
+    "socket.io": "^1.7.2",
     "pg": "^6.1.2",
     "stream-split": "^1.1.0",
     "stream-throttle": "^0.1.3",

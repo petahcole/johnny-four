@@ -9,7 +9,30 @@
     function DriveViewController($window) {
         const vm = this;
         vm.$onInit = function() {
-            console.log('drive me ooooh')
+          var socket = io.connect('10.6.67.156:3000');
+   console.log('connected');
+
+          vm.forward = function() {
+      console.log('within function');
+            socket.emit('forward');
+          }
+
+         vm.stop = function() {
+           console.log('stop');
+           socket.emit('stop');
+         }
+
+         vm.reverse = function() {
+           socket.emit('reverse');
+         }
+
+         vm.right = function() {
+           socket.emit('right');
+         }
+
+         vm.left = function() {
+           socket.emit('left');
+         }
 
             var container = document.getElementById('view-canvas');
             var canvas = document.createElement("canvas");
