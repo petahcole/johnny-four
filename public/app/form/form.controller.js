@@ -11,9 +11,9 @@
 
         vm.$onInit = function() {
             if ($location.path() === '/signup') {
-                vm.greeting = "Signup"
+                vm.greeting = "SIGNUP"
             } else {
-                vm.greeting = "Login"
+                vm.greeting = "LOGIN"
             }
         }
 
