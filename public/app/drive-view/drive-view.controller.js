@@ -6,7 +6,7 @@
         .controller('DriveViewController', DriveViewController);
 
 
-    function DriveViewController() {
+    function DriveViewController($window) {
         const vm = this;
         vm.$onInit = function() {
             console.log('drive me ooooh')
@@ -22,6 +22,27 @@
 
             //expose instance for button callbacks
             window.wsavc = wsavc;
+        }
+        vm.keyPress = function() {
+          if(event.keyCode === 38) {
+            console.log('up arrow pressed');
+          } else if (event.keyCode === 40) {
+            console.log('down arrow pressed');
+          } else if (event.keyCode === 37) {
+            console.log('left arrow pressed');
+          } else if (event.keyCode === 39) {
+            console.log('right arrow pressed');
+          }
+        }
+
+        vm.keyRelease = function()  {
+            console.log('key released');
+        }
+
+        vm.driveMe = function() {
+          console.log('clicked');
+          vm.element = $window.document.getElementById('drive')
+          vm.element.focus()
         }
 
     }
