@@ -4,6 +4,7 @@
   margin-right: 10vw;
   margin-top: 5vh;
   margin-bottom: 5vh;
+  border: 1px solid black
 }
 
 canvas {
@@ -29,4 +30,23 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#drive   {
+  display: none;
+}
+
+.bullet {
+  width: 2em;
+  margin-right: 1em;
+  margin-top: 1em
+}
+
+span  {
+  font-size: 5vh;
+  margin-top: 1em
+}
+
+.btns {
+  margin-top: 2em
 }

@@ -28,13 +28,12 @@ router.post('/signup', (req, res, next) => {
         password: bcrypt.hashSync(req.body.password),
 
     }
-    Q
-        .validSign(userInfo.username)
-        .then(user => {
-            if (!user) {
-                Q
-                    .createUser(userInfo)
-                    .then(result => {
+
+        Q.validSign(userInfo.username)
+          .then(user => {
+            if (!user) {                
+                    Q.createUser(userInfo)
+                      .then(result => {
                         res.send('Success');
                     });
             } else {
