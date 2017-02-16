@@ -13,7 +13,6 @@
    console.log('connected');
 
           vm.forward = function() {
-      console.log('within function');
             socket.emit('forward');
           }
 
@@ -45,28 +44,35 @@
 
             //expose instance for button callbacks
             window.wsavc = wsavc;
-        }
-        vm.keyPress = function() {
-          if(event.keyCode === 38) {
-            console.log('up arrow pressed');
-          } else if (event.keyCode === 40) {
-            console.log('down arrow pressed');
-          } else if (event.keyCode === 37) {
-            console.log('left arrow pressed');
-          } else if (event.keyCode === 39) {
-            console.log('right arrow pressed');
-          }
+
+            vm.keyPress = function() {
+              if(event.keyCode === 38) {
+                console.log('up arrow pressed');
+                socket.emit('forward');
+              } else if (event.keyCode === 40) {
+                console.log('down arrow pressed');
+                socket.emit('reverse');
+              } else if (event.keyCode === 37) {
+                console.log('left arrow pressed');
+                socket.emit('left');
+              } else if (event.keyCode === 39) {
+                console.log('right arrow pressed');
+                socket.emit('right');
+              }
+            }
+
+            vm.keyRelease = function()  {
+                console.log('key released');
+                socket.emit('stop');
+            }
+
+            vm.driveMe = function() {
+              console.log('clicked');
+              vm.element = $window.document.getElementById('drive')
+              vm.element.focus()
+            }
         }
 
-        vm.keyRelease = function()  {
-            console.log('key released');
-        }
-
-        vm.driveMe = function() {
-          console.log('clicked');
-          vm.element = $window.document.getElementById('drive')
-          vm.element.focus()
-        }
 
     }
 
