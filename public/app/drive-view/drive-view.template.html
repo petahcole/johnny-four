@@ -3,7 +3,7 @@
     <md-button id="end-btn" class="md-warn md-raised" onclick="wsavc.stopStream()">End</md-button>
 </div>
 <div id="view-canvas" layout="column" layout-align="center center" class="container" ng-model=$ctrl.stream>
-    <ul ng-show="!$ctrl.show">
+    <ul ng-show="$ctrl.show">
         <img class="bullet" src="../assets/images/nodebot_black.png" alt="">
         <span>Step 1: Click the start button</span>
         <br><br>

@@ -9,6 +9,7 @@
     function DriveViewController($window) {
         const vm = this;
         vm.$onInit = function() {
+            vm.show = true;
             var socket = io.connect('10.6.67.156:3000');
             console.log('connected');
 
