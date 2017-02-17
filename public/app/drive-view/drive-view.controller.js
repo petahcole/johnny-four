@@ -68,6 +68,7 @@
             }
 
             vm.driveMe = function() {
+                vm.show = false;
                 console.log('clicked');
                 vm.element = $window.document.getElementById('drive')
                 vm.element.focus()
