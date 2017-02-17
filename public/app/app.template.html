@@ -4,16 +4,16 @@
             <h3 id="logo" flex="80">
                 <a ui-sref="home">Johnny Four</a>
             </h3>
-            <md-button class="md-primary md-raised nav" md-colors="{color: 'indigo-50'}" ng-show="!$ctrl.isUserLoggedIn">
+            <md-button class="md-primary md-raised nav" md-colors="{color: 'indigo-50'}" ng-click="show= !show" ng-show="!show">
                 <a ui-sref="signup">Signup</a>
             </md-button>
-            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="!$ctrl.isUserLoggedIn">
+            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="!show" ng-click="show = !show">
                 <a ui-sref="login">Login</a>
             </md-button>
-            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="$ctrl.isUserLoggedIn">
-                <a ui-sref="home">Username</a>
+            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="show" ng-click="show = !show">
+                <a ui-sref="home"></a>
             </md-button>
-            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="$ctrl.isUserLoggedIn">
+            <md-button class="md-primary md-raised nav" md-colors="{color: 'red-A100'}" ng-show="show" ng-click="show = !show">
                 <a ui-sref="home">Logout</a>
             </md-button>
         </div>

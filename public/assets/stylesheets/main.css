@@ -20,8 +20,13 @@ footer {
 }
 
 .section {
-  height: 30em;
   width: 100%;
+  height: 30em;
+}
+
+.feature {
+  width: 100%;
+  height: 10em;
 }
 
 .jumbotron {
@@ -79,11 +84,14 @@ footer {
   font-size: 2em;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  padding-top: 1.5em;
-  line-height: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-image: url(../images/bot4.png);
+  background-attachment: fixed;
+  background-position: 2.5em 10em;
+  background-repeat: no-repeat;
+  background-size: 11em;
 }
 
 .about h4 {
@@ -94,22 +102,18 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: .5em;
+  text-align: center;
 }
 
 .col img {
-  width: 30%;
-}
-
-.col h5 {
-  margin: 0;
+  height: 2.5em;
 }
 
 .col p {
-  margin: 0;
-  line-height: 1em;
-  font-size: .5em;
-  text-align: center;
-  width: 80%;
+  font-size: .65em;
+  line-height: 1.2em;
+  padding-top: 1em;
 }
 
 .form-content {
@@ -131,4 +135,8 @@ md-input-container {
 
 .error {
   color: #820004;
+}
+
+.robot img {
+  width: 100%;
 }
