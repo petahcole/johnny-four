@@ -4,7 +4,7 @@
 
 ### How It Works
 
-A basic Node.js Express server with a web socket connection to keep open a constant stream of video between the AngularJS frontend where the video shows and bot's remote Raspi-cam. When the user clicks "Start" in the web app browser, the video stream begins.
+* A basic Node.js Express server with a web socket connection to keep open a constant stream of video between the AngularJS frontend where the video shows and bot's remote Raspi-cam. When the user clicks "Start" in the web app browser, the video stream begins.
 
 ### Technologies
 * Raspberry Pi, AngularJS, Node.js, Express, Knex.js,  Johnny-Five, Socket.io, h264 Live Player, Broadway.js\
